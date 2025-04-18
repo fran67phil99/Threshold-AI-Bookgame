@@ -1,0 +1,6 @@
+tensorflow
+streamlit
+scikit-learn
+google-generativeai
+matplotlib
+numpy

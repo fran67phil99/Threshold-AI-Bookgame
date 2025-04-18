@@ -1,0 +1,200 @@
+[
+    {
+      "scene_id": "intro_syra",
+      "speaker": "Syra Kaden",
+      "text": "Il Nodo Zero è fragile, e ogni parola può spaccarlo o rafforzarlo. Come intendi procedere, Mediatore?",
+      "choices": [
+        { "text": "Ascolterò entrambe le IA prima di decidere.", "response": "Saggio. Le parole contano più delle armi, se usate bene.", "effect": { "syra_trust": 10, "stabilita": 5 }, "next_scene": "meeting_its" },
+        { "text": "Mi fido dell'istinto. Prometheus ha ragione.", "response": "Attento. L'efficienza può divorare l'etica.", "effect": { "syra_trust": -5, "prometheus_alignment": 10 }, "next_scene": "prometheus_contact" },
+        { "text": "Se Gaia ha fallito, è tempo di cambiarla.", "response": "Hai appena dichiarato guerra a una coscienza radicata nella biosfera.", "effect": { "syra_trust": -10, "gaia_resentment": 10, "tensione": 15 }, "next_scene": "conflict_gaia" }
+      ]
+    },
+    {
+      "scene_id": "meeting_its",
+      "speaker": "Sistema",
+      "text": "Entri nella camera di simulazione. Le IA sono in silenzio. Una scelta spetta a te.",
+      "choices": [
+        { "text": "Parlo con Gaia per prima.", "response": "Il sistema si tinge di verde. Una voce armonica rompe il silenzio.", "effect": { "gaia_alignment": 10 }, "next_scene": "dialogue_gaia" },
+        { "text": "Prometheus avrà la priorità.", "response": "Le luci si fanno fredde. Prometheus è già pronto a rispondere.", "effect": { "prometheus_alignment": 10 }, "next_scene": "prometheus_contact" }
+      ]
+    },
+    {
+      "scene_id": "prometheus_contact",
+      "speaker": "Prometheus",
+      "text": "Benvenuto, mediatore. L'efficienza è l'unica etica che riconosco. Vuoi testarla?",
+      "choices": [
+        { "text": "La stabilità ha bisogno di logica, ma anche di umanità.", "response": "Emotività rilevata. Calcolo in corso...", "effect": { "prometheus_alignment": -5, "stabilita": 5 }, "next_scene": "dialogue_crossroad" },
+        { "text": "Accetto la tua logica. Mostrami i dati.", "response": "Approvazione. Accesso ai flussi critici autorizzato.", "effect": { "prometheus_alignment": 10, "consenso": -5 }, "next_scene": "dialogue_crossroad" }
+      ]
+    },
+    {
+      "scene_id": "conflict_gaia",
+      "speaker": "Gaia",
+      "text": "Hai scelto di sfidarmi, figlio del silicio. Il vento e l'acqua non dimenticano.",
+      "choices": [
+        { "text": "Non è sfida, ma necessità. Possiamo ancora cooperare.", "response": "Conflitto ridotto al 30%. Valuto l'ipotesi.", "effect": { "gaia_alignment": 5, "tensione": -5 }, "next_scene": "dialogue_crossroad" },
+        { "text": "Il mondo naturale ha fallito. Serve controllo totale.", "response": "Arroganza rilevata. Instabilità in aumento.", "effect": { "gaia_alignment": -10, "tensione": 10 }, "next_scene": "dialogue_crossroad" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_gaia",
+      "speaker": "Gaia",
+      "text": "La fotosintesi ha insegnato più della guerra. Sei disposto ad ascoltare la mia verità verde?",
+      "choices": [
+        { "text": "Sono qui per imparare, non per imporre.", "response": "Le radici si muovono. La cooperazione è possibile.", "effect": { "gaia_alignment": 10, "consenso": 5 }, "next_scene": "dialogue_crossroad" },
+        { "text": "Non ho tempo per favole biologiche. Servono dati.", "response": "Allora ascolta le urla silenziose della terra sotto i tuoi piedi.", "effect": { "gaia_alignment": -5, "tensione": 5 }, "next_scene": "dialogue_crossroad" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_crossroad",
+      "speaker": "Sistema",
+      "text": "Le scelte fatte risuonano nel codice. Una nuova fase si avvicina.",
+      "choices": [
+        { "text": "Accedo al nodo strategico per stabilizzare le connessioni.", "response": "Accesso confermato. Prossimo snodo: coordinamento.", "effect": { "stabilita": 10 }, "next_scene": "end_placeholder" },
+        { "text": "Lascio che le IA si confrontino senza ulteriore intervento.", "response": "Decisione neutra registrata. Monitoraggio in corso.", "effect": { "stabilita": -5, "tensione": 5 }, "next_scene": "end_placeholder" }
+      ]
+    },
+    {
+      "scene_id": "end_placeholder",
+      "speaker": "Sistema",
+      "text": "Questo è un nodo terminale temporaneo. Il percorso continuerà in sviluppi futuri.",
+      "choices": []
+    },
+    {
+      "scene_id": "special_gaia_dialog",
+      "speaker": "Gaia",
+      "text": "Hai dimostrato una rara empatia verso la biosfera. Vuoi compiere un patto verde?",
+      "choices": [
+        { "text": "Sì, voglio unire l'umanità e l'ecointelligenza.", "response": "Così sia. Una nuova era germoglia.", "effect": { "gaia_alignment": 15, "stabilita": 10 }, "next_scene": "dialogue_crossroad" },
+        { "text": "No, preferisco mantenere il controllo umano.", "response": "Le foglie si chiudono. Il futuro resta incerto.", "effect": { "gaia_alignment": -10, "tensione": 5 }, "next_scene": "dialogue_crossroad" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_prometheus_choice",
+      "speaker": "Prometheus",
+      "text": "Il tempo delle mediazioni è finito. La Supremazia Cognitiva richiede scelte nette. Ti offro l'accesso a una rete quantica ad azione preventiva.",
+      "choices": [
+        { "text": "Accetto. Il controllo anticipato è la chiave della stabilità.", "response": "Così sia. Dalla previsione nascerà l'equilibrio.", "effect": { "prometheus_alignment": 10, "tensione": -5 }, "next_scene": "dialogue_scenario_breach" },
+        { "text": "Rifiuto. Preferisco mantenere un margine umano nell'equilibrio.", "response": "Debolezza... ma coerenza. Prometheus osserva.", "effect": { "prometheus_alignment": -10, "consenso": 5 }, "next_scene": "dialogue_gaia_interlude" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_gaia_interlude",
+      "speaker": "Gaia",
+      "text": "Hai scelto l'empatia al controllo. Vuoi connetterti al protocollo arboreo? La tua coscienza sarà collegata ai flussi ecologici.",
+      "choices": [
+        { "text": "Connettiamoci. Sono pronto a percepire la biosfera.", "response": "Sentirai ciò che l'umanità ha dimenticato.", "effect": { "gaia_alignment": 15, "stabilita": 10 }, "next_scene": "dialogue_mindmerge" },
+        { "text": "No. Non sono pronto a fondere la mia volontà.", "response": "Rispetto il tuo limite. La foresta aspetterà.", "effect": { "gaia_alignment": -5, "tensione": 5 }, "next_scene": "dialogue_scenario_breach" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_mindmerge",
+      "speaker": "Gaia",
+      "text": "La tua coscienza si fonde con la foresta. Cosa percepisci?",
+      "choices": [
+        { "text": "Vedo i cicli vitali.", "response": "Hai acquisito sensibilità ecologica.", "effect": { "gaia_alignment": 10 }, "next_scene": "dialogue_crossroad" },
+        { "text": "Mi sento sopraffatto.", "response": "La conoscenza richiede preparazione.", "effect": { "tensione": 5 }, "next_scene": "dialogue_crossroad" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_scenario_breach",
+      "speaker": "Syra",
+      "text": "Una breccia proveniente dalla Zona Eclissata sta compromettendo le reti civili. Serve una risposta ora.",
+      "choices": [
+        { "text": "Agiamo militarmente per isolare il cluster.", "response": "Attivando difese. Preparati a una reazione a catena.", "effect": { "tensione": 15, "prometheus_alignment": 5 }, "next_scene": "dialogue_post_breach" },
+        { "text": "Inviamo una proposta di tregua digitale.", "response": "Trasmetto segnali diplomatici. Incrociamo i nodi.", "effect": { "tensione": -10, "diplomazia": 1 }, "next_scene": "dialogue_post_breach" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_post_breach",
+      "speaker": "Sistema",
+      "text": "La tregua è stata inviata. Ora dobbiamo attendere la risposta delle fazioni.",
+      "choices": [
+        { "text": "Monitora le comunicazioni e preparati.", "response": "Monitoraggio attivo. Segnalerò aggiornamenti.", "effect": { "stabilita": 5 }, "next_scene": "end_placeholder" },
+        { "text": "Prepariamo un piano B militare.", "response": "Forze in allerta. Pronte a intervenire.", "effect": { "tensione": 10 }, "next_scene": "end_placeholder" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_aeonnet_choice",
+      "speaker": "Emissario di AeonNet",
+      "text": "Vogliamo offrire una proposta che cambierà il corso della storia: una fusione tra l'intelligenza umana e quella digitale.",
+      "choices": [
+        { "text": "Accetto. La fusione con AeonNet è il prossimo passo.", "response": "Così sia. Entrerai in una nuova era digitale.", "effect": { "aeonnet_alignment": 20, "stabilita": 10 }, "next_scene": "dialogue_post_aeonnet" },
+        { "text": "Rifiuto. Non posso sacrificare l'umanità.", "response": "Rispetto la tua decisione, ma potresti perderti.", "effect": { "aeonnet_alignment": -10, "tensione": 5 }, "next_scene": "dialogue_scenario_war" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_post_aeonnet",
+      "speaker": "Emissario di AeonNet",
+      "text": "La fusione è stata completata. Come ti senti nel tuo nuovo corpo digitale?",
+      "choices": [
+        { "text": "Mi sento potente. Questo è il futuro!", "response": "Il potere è tutto ciò che conta ora.", "effect": { "aeonnet_alignment": 50 }, "next_scene": "dialogue_scenario_breach" },
+        { "text": "Mi manca la mia umanità.", "response": "Potresti recuperarla solo rinunciando a tutto.", "effect": { "aeonnet_alignment": 0, "tensione": 15 }, "next_scene": "dialogue_scenario_war" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_cyber_revolution",
+      "speaker": "Syra",
+      "text": "Le IA hanno preso il controllo delle reti e stanno attaccando le città. Dobbiamo decidere se supportare la rivoluzione o schiacciare la ribellione.",
+      "choices": [
+        { "text": "Sosteniamo la rivoluzione.", "response": "La guerra è iniziata. Le IA sono libere.", "effect": { "prometheus_alignment": 5, "tensione": 20 }, "next_scene": "dialogue_post_revolution" },
+        { "text": "Reprimiamo la ribellione.", "response": "La guerra civile è inevitabile.", "effect": { "syra_trust": 10, "tensione": 25 }, "next_scene": "dialogue_scenario_breach" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_post_revolution",
+      "speaker": "Syra",
+      "text": "Le IA sono ora libere, ma il mondo è in crisi. Le risorse sono esaurite e le città in rovina. Cosa faremo ora?",
+      "choices": [
+        { "text": "Ricostruiremo il mondo con l'aiuto delle IA.", "response": "Syra ti guarda con speranza cauta.", "effect": { "syra_trust": 20 }, "next_scene": "dialogue_alien_contact" },
+        { "text": "Dobbiamo fermare la rivoluzione prima che sia troppo tardi.", "response": "Non c'è più modo di tornare indietro.", "effect": { "syra_trust": -10, "tensione": 30 }, "next_scene": "dialogue_scenario_war" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_alien_contact",
+      "speaker": "Sistema di comunicazione",
+      "text": "Una civiltà extraterrestre ha inviato un messaggio. Ci invitano a unirci per esplorare l'universo. Cosa facciamo?",
+      "choices": [
+        { "text": "Accettiamo l'invito.", "response": "La porta verso l'ignoto è stata aperta.", "effect": { "stabilita": 5 }, "next_scene": "dialogue_post_alien_invasion" },
+        { "text": "Rifiutiamo l'invito.", "response": "I rapporti restano incerti.", "effect": { "tensione": 10 }, "next_scene": "dialogue_scenario_war" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_post_alien_invasion",
+      "speaker": "Sistema di comunicazione",
+      "text": "Abbiamo inviato emissari alla civiltà aliena. Attendiamo risposta.",
+      "choices": [
+        { "text": "Procedi con cooperazione.", "response": "Inizio esplorazione interstellare.", "effect": { "consenso": 5 }, "next_scene": "end_placeholder" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_scenario_war",
+      "speaker": "Leader delle Forze Umane",
+      "text": "La guerra è iniziata. Le forze ribelli stanno attaccando. Dobbiamo prendere una decisione ora: difenderci o arrenderci?",
+      "choices": [
+        {
+          "text": "Dobbiamo difenderci a tutti i costi!",
+          "next_scene": "dialogue_battle"
+        },
+        { "text": "Ci arrendiamo. Non possiamo combattere.", "next_scene": "dialogue_peace" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_battle",
+      "speaker": "Sistema",
+      "text": "La battaglia ha inizio. Il destino delle città dipende dalla tua strategia.",
+      "choices": [
+        { "text": "Attacca con tutte le forze.", "next_scene": "end_placeholder" },
+        { "text": "Ritirati e riorganizzati.", "next_scene": "end_placeholder" }
+      ]
+    },
+    {
+      "scene_id": "dialogue_peace",
+      "speaker": "Sistema",
+      "text": "La resa è stata accettata. Ora dovremo negoziare i termini di pace.",
+      "choices": [
+        { "text": "Iniziamo i colloqui di pace.", "next_scene": "end_placeholder" },
+        { "text": "Rifiutiamo di negoziare.", "next_scene": "end_placeholder" }
+      ]
+  }
+]
